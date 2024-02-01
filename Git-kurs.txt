@@ -1,2 +1,3 @@
 Dette er første linje av en tekst.
 Dette er linjen under første linjen av en tekst.
+Denne linjen er under to linjer.
