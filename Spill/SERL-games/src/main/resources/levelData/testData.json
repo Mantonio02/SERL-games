@@ -1,0 +1,70 @@
+{
+  "0": {
+    "map": "level0",
+    "friends": [
+      {
+        "class": "game.entities.npc.Merchant",
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "class": "game.entities.npc.Villager",
+        "position": {
+          "x": 100,
+          "y": 100
+        }
+      }
+    ],
+    "foes": [
+      {
+        "class": "game.entities.movingEntities.attackEntities.enemies.Wolf",
+        "position": {
+          "x": 200,
+          "y": 500
+        }
+      }
+    ],
+    "doors": [
+      {
+        "class": "game.entities.Door",
+        "toLevel": 1,
+        "playerDependent": true,
+        "position": {
+          "x": 400,
+          "y": 400
+        },
+        "toPosition": {
+          "x": 100,
+          "y": 100
+        }
+      },
+      {
+        "class": "game.entities.Door",
+        "toLevel": 2,
+        "playerDependent": false,
+        "position": {
+          "x": 300,
+          "y": 300
+        },
+        "toPosition": {
+          "x": 200,
+          "y": 200
+        }
+      }
+    ]
+  },
+  "1": {
+    "map": "level1",
+    "friends": [],
+    "foes": [],
+    "doors": []
+  },
+  "2": {
+    "map": "level2",
+    "friends": [],
+    "foes": [],
+    "doors": []
+  }
+}

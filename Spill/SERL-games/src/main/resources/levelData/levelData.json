@@ -1,0 +1,87 @@
+{
+  "0": {
+    "map": "maps/bigmap.tmx",
+    "friends": [
+      {
+        "class": "game.entities.npc.Merchant",
+        "position": {
+          "x": 1000,
+          "y": 1230
+        }
+      },
+      {
+        "class": "game.entities.npc.Villager",
+        "position": {
+          "x": 1500,
+          "y": 1230
+        }
+      }
+    ],
+    "foes": [
+      {
+        "class": "game.entities.movingEntities.attackEntities.enemies.Wolf",
+        "position": {
+          "x": 200,
+          "y": 500
+        }
+      },
+      {
+        "class": "game.entities.movingEntities.attackEntities.enemies.Wolf",
+        "position": {
+          "x": 400,
+          "y": 400
+        }
+      },
+      {
+        "class": "game.entities.movingEntities.attackEntities.enemies.Slime",
+        "position": {
+          "x": 700,
+          "y": 500
+        }
+      }
+    ],
+    "doors": [
+      {
+        "class": "game.entities.Door",
+        "toLevel": 1,
+        "playerDependent": false,
+        "position": {
+          "x": 1176,
+          "y": 2352
+        },
+        "toPosition": {
+          "x": 1202,
+          "y": 100
+        }
+      }
+    ]
+  },
+  "1": {
+    "map": "maps/bossFight.tmx",
+    "friends": [],
+    "foes": [
+      {
+        "class": "game.entities.movingEntities.attackEntities.enemies.Boss",
+        "position": {
+          "x": 1100,
+          "y": 950
+        }
+      }
+    ],
+    "doors": [
+      {
+        "class": "game.entities.Door",
+        "toLevel": 0,
+        "playerDependent": false,
+        "position": {
+          "x": 1176,
+          "y": 0
+        },
+        "toPosition": {
+          "x": 1202,
+          "y": 2300
+        }
+      }
+    ]
+  }
+}

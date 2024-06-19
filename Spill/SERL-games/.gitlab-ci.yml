@@ -1,0 +1,50 @@
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+image: maven:3.8.7-openjdk-18-slim
+
+cache:
+  paths:
+    - .m2/repository
+
+stages:
+  - build
+  - test
+  - visualize
+  - verify
+  - package
+
+compile:
+  stage: build
+  script: "mvn $MAVEN_OPTS compile"
+
+run_tests:
+  stage: test
+  script: 
+    - mvn $MAVEN_OPTS test
+    - 'cat target/site/jacoco/index.html | grep -oP ''Total.*?\d+%'' | sed -r ''s/.*>([0-9]+)%/\Total Coverage: \1%/g'''
+  coverage: '/Total.*?(\d+)%/'
+  artifacts:
+    paths:
+      - target/site/jacoco/jacoco.xml
+
+# from gitlab docs
+coverage-visualize:
+  stage: visualize
+  image: registry.gitlab.com/haynes/jacoco2cobertura:1.0.9
+  script:
+    - python /opt/cover2cover.py target/site/jacoco/jacoco.xml $CI_PROJECT_DIR/src/main/java/ > target/site/cobertura.xml
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: target/site/cobertura.xml
+
+
+verify:
+  stage: verify
+  script: "mvn $MAVEN_OPTS verify"
+
+package:
+  stage: package
+  script: "mvn $MAVEN_OPTS package"
