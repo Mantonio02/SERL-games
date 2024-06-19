@@ -1,7 +1,7 @@
 # INF112 Project
 
-* Team: *SERL games* (Gruppe 1): *Tyra Fosheim Eide, Sebastian Refsnes, Jonathan Ski og Mathias Antonio Løland*
-* https://git.app.uib.no/Tyra.Eide/SERL-games
+* Team: *SERL games*: *Tyra Fosheim Eide, Sebastian Refsnes, Jonathan Ski og Mathias Antonio Løland*
+* Blog: https://smuch12.github.io/INF112-Bloggpost/
 
 ## Om spillet
 
